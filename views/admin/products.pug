@@ -1,0 +1,20 @@
+extends ../base/main.pug
+
+block content
+  h1.title admin products
+
+  if products.length === 0
+    h3.title.text-xl no products
+  else
+    ul.products
+      each prod in products
+        li.prod.shadow.bg-white.rounded.border-2.border-red-500.text-center.py-4
+          h3.font-semibold.text-lg #{prod.title}
+          img(src=prod.imageUrl alt=prod.title style='height: 349px').w-full.object-center.object-cover.my-2
+          p $#{prod.price}
+          p.p-2 #{prod.description}
+          .flex.gap-4.w-fit.mx-auto
+            a(href=`/admin/edit-product/${prod.id}?edit=true`).btn.shadow edit 
+            form(action="/admin/delete-product" method='POST')
+              input(type="hidden" name="productId" value=prod.id)
+              button.btn.shadow delete

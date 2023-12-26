@@ -1,0 +1,39 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title #{pageTitle}
+    link(rel="stylesheet" href="/css/main-style.css")
+    <script src="https://cdn.tailwindcss.com"></script>
+    script(defer src="/js/nav.js") 
+
+  body
+    header.navigation.bg-red-500.text-white.p-4.sticky.top-0.flex.items-center.relative
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-18 cursor-pointer">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+      </svg>
+
+      .backdrop.z-10
+      ul.flex.gap-4.font-semibold.text-xl.capitalize.text-rose-800.z-20
+        .close.hidden
+          <svg xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-18 cursor-pointer">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        li(class=(path === '/' ? 'act-link' : ''))
+          a(href="/") shop
+
+        li(class=(path === '/products' ? 'act-link' : ''))
+          a(href="/products") products
+
+        li(class=(path === '/cart' ? 'act-link' : ''))
+          a(href="/cart") cart
+
+        li(class=(path === '/admin/add-product' ? 'act-link' : ''))
+          a(href="/admin/add-product") add product
+
+        li(class=(path === '/admin/products' ? 'act-link' : ''))
+          a(href="/admin/products") admin products
+
+  main.bg-gray-200.px-8.py-4
+    block content

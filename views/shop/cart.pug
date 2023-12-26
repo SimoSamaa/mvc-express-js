@@ -1,0 +1,15 @@
+extends ../base/main.pug
+
+block content
+  h1.title my cart
+  p.mb-2.p-2.bg-white.w-fit.rounded.shadow total price: $#{totalPrice}
+  if carts.length === 0
+    p No Products in Cart
+  else
+    ul.grid.gap-4
+      each cart in carts
+        li.flex.gap-4.items-center.justify-between.bg-white.rounded.shadow.p-2.border-red-500.border-2
+          p #{cart.prod.title}(#{cart.qty}) | $#{cart.prod.price}
+          form(action="/delete-cart" method='POST')
+            input(type="hidden" name="productId" value=cart.prod.id)
+            button.btn.shadow delete

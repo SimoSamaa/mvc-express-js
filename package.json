@@ -1,0 +1,21 @@
+{
+  "name": "mvc-express-js",
+  "version": "1.0.0",
+  "description": "Model View Controller is a software design pattern.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "nodemon app.js"
+  },
+  "author": "TheCoder",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "pug": "^3.0.2",
+    "uuid": "^9.0.1"
+  }
+}

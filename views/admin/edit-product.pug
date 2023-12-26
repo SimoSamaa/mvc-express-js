@@ -1,0 +1,14 @@
+extends ../base/main.pug
+
+block content
+  h1.title #{`${editing ? 'update' : 'add'} product`}
+  form(action=`/admin/${editing ? 'edit' : 'add'}-product` method='POST').grid.gap-4.max-w-md
+    input(type="text" name='title' placeholder='Title' required value=editing ? product.title : '')
+    input(type="text" name='imageUrl' placeholder='Image Url' required value=editing ? product.imageUrl : '')
+    input(type="number" name='price' placeholder='Price' step='any' required value=editing ? product.price : '')
+    textarea(placeholder='Descriptin' name='description' required class='h-24 p-2') #{editing ? product.description : ''}
+    .flex.gap-4
+      if editing
+        input(type="hidden" name="productId" value=product.id)
+      button(type='submit').btn.shadow #{`${editing ? 'update' : 'add'}`}
+      button(type='reset').btn.shadow reset

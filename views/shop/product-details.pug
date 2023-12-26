@@ -1,0 +1,14 @@
+extends ../base/main.pug
+
+block content
+  h1.title product details
+  div(class='bg-white flex border-2 border-red-500 rounded shadow max-sm:grid')
+    .min-w-60.h-60
+      img(src=product.imageUrl alt=product.title).object-cover.w-full.h-full
+    .p-4.relative.w-full
+      p.font-semibold.text-xl product name: #{product.title}
+      p.font-semibold.text-xl product price: $#{product.price}
+      p.font-semibold.text-xl product description: #{product.description}
+      form(action="/cart" method='POST' class='mt-4 w-fit ml-auto absolute bottom-4 right-4 max-sm:static')
+        input(type="hidden" name="productId" value=product.id)
+        button.btn.shadow add to cart
