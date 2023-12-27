@@ -23,5 +23,9 @@ This is a simple web application built with Express.js that demonstrates the MVC
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-username/express-store-project.git
-   cd express-store-project
+   git clone https://github.com/SimoSamaa/mvc-express-js.git
+   
+2  **Install the dependencies for run the project:**
+
+   ```bash
+   npm install
