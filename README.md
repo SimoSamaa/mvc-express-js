@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a simple web application built with Express.js that demonstrates the MVC (Model-View-Controller) architecture in JavaScript. The project simulates a store with features for adding, editing, and deleting products in the admin panel, as well as a shopping cart on the shop page. Instead of using a database, the project uses the `fs` module to store data locally.
+This is a simple web application built with Express.js that demonstrates the MVC (Model-View-Controller) architecture in JavaScript. The project simulates a store with features for adding, editing, and deleting products in the admin panel, as well as a shopping cart on the shop page. Instead of using a database, the project uses the `fs` module to store data locally JSON file.
 
 ## Features
 
