@@ -24,7 +24,8 @@ This is a simple web application built with Express.js that demonstrates the MVC
 
    ```bash
    git clone https://github.com/SimoSamaa/mvc-express-js.git
-   
+
+
 2  **Install the dependencies for run the project:**
 
    ```bash
